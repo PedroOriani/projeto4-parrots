@@ -1,17 +1,6 @@
-const n = prompt('Bem vindo ao Parrots Card Game.\nCom quantas cartas quer jogar o jogo?');
+let n = prompt('Bem vindo ao Parrots Card Game.\nCom quantas cartas quer jogar o jogo?\nEscolha um número entre 4 e 14.');
 
-while (n % 2 !== 0){
+while (n % 2 !== 0 || n < 4 || n > 14){
     console.log(n)
-    n = prompt('Bem vindo ao Parrots Card Game.\nCom quantas cartas quer jogar o jogo?');
+    n = prompt('Bem vindo ao Parrots Card Game.\nCom quantas cartas quer jogar o jogo?\nEscolha um número entre 4 e 14.');
 }
-
-
-
-//function generateCards(){}
-
-//minhaArray.sort(comparador);
-
-//function comparador() { 
-//	return Math.random() - 0.5; 
-//}
-
