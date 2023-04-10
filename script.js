@@ -69,6 +69,7 @@ let card1;
 let card2;  
 let first;
 let second;
+let turned = 0;
 
 
 let back = "";
@@ -117,15 +118,19 @@ function verifySelection(){
         if(gifsNum[firstCard] % 2 == 0 && gifsNum[secondCard] == gifsNum[firstCard] + 1){
         flippedCards = [];
             fixTurned()
+            pair ++;
         } else if (gifsNum[firstCard] % 2 == 1 && gifsNum[secondCard] == gifsNum[firstCard] - 1) {
             fixTurned()
-            flippedCards = [];            
+            flippedCards = []; 
+            pair ++;           
         }else if (gifsNum[firstCard] == 0 && gifsNum[secondCard] == 1) {
             fixTurned()
-            flippedCards = [];                    
+            flippedCards = []; 
+            pair ++;                   
         }else if (gifsNum[firstCard] == 1 && gifsNum[secondCard] == 0) {
             fixTurned()
-            flippedCards = [];                     
+            flippedCards = [];    
+            pair ++;                 
         }else {  
      
             turningBack()
@@ -159,4 +164,12 @@ function verifySelection(){
 
         card1.removeAttribute("onclick");
         card2.removeAttribute("onclick");
+        turned++;
+        console.log(turned)
+
+        if (turned == n){
+            alert(`Você ganhou em ${countflip.length} jogadas!`)
+            console.log(turned)
+            console.log(n)
+         }
  }
