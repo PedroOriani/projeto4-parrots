@@ -130,20 +130,20 @@
   height: 100px;
 }
 
+.gif{
+  width: 100px;
+  height: 100px;
+}
+
 .back-face {
   transform: rotateY(180deg);
 }
 
-.card .flip{
-  transform: rotateY(180deg);
-}
-
-.card:hover .back-face {
-  transform: rotateY(0deg);
-}
-
-.card:hover .front-face {
+.front {
   transform: rotateY(-180deg);
+}
+.back {
+  transform: rotateY(0deg);
 }
 
 @media (max-width: 600px) {
