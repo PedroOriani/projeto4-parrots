@@ -112,6 +112,9 @@ function flip(carta) {
         card2 = carta
        setTimeout(verifySelection, 1000, firstCard, secondCard);
     }
+
+    console.log(firstCard)
+    console.log(secondCard)
 }
 
 function verifySelection(){
@@ -128,6 +131,54 @@ function verifySelection(){
             flippedCards = []; 
             pair ++;                   
         }else if (gifsNum[firstCard] == 1 && gifsNum[secondCard] == 0) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 2 && gifsNum[secondCard] == 3) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 3 && gifsNum[secondCard] == 2) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 4 && gifsNum[secondCard] == 5) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 5 && gifsNum[secondCard] == 4) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 6 && gifsNum[secondCard] == 7) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 7 && gifsNum[secondCard] == 6) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 8 && gifsNum[secondCard] == 9) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 9 && gifsNum[secondCard] == 8) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 10 && gifsNum[secondCard] == 11) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 11 && gifsNum[secondCard] == 10) {
+            fixTurned()
+            flippedCards = [];    
+            pair ++;                 
+        }else if (gifsNum[firstCard] == 12 && gifsNum[secondCard] == 13) {
+            fixTurned()
+            flippedCards = []; 
+            pair ++;                   
+        }else if (gifsNum[firstCard] == 13 && gifsNum[secondCard] == 12) {
             fixTurned()
             flippedCards = [];    
             pair ++;                 
@@ -164,8 +215,7 @@ function verifySelection(){
 
         card1.removeAttribute("onclick");
         card2.removeAttribute("onclick");
-        turned++;
-        console.log(turned)
+        turned += 2;
 
         if (turned == n){
             alert(`Você ganhou em ${countflip.length} jogadas!`)
