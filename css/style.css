@@ -95,8 +95,6 @@
   flex-wrap: wrap;
 
   margin-top: 47px;
-
-  background-color: violet;
 }
 
 .card {
@@ -132,20 +130,12 @@
   height: 100px;
 }
 
-.gif{
-  width: 100px;
-  height: 100px;
-}
-
 .back-face {
   transform: rotateY(180deg);
 }
-.turning-back-face {
-  transform: rotateY(0deg);
-}
 
-.turning-front-face {
-  transform: rotateY(-180deg);
+.card .flip{
+  transform: rotateY(180deg);
 }
 
 .card:hover .back-face {
