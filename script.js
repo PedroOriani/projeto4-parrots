@@ -65,7 +65,8 @@ let flippedCards = [];
 let pair = 0;
 let firstCard = null;
 let secondCard = null;
-let card;
+let card1;
+let card2;  
 let first;
 let second;
 
@@ -84,7 +85,7 @@ function flip(carta) {
     if(flippedCards.length > 0 && flippedCards.length % 2 == 0){
 
     }else if(confSeleção !== null){
-        carta.setAttribute("onclick", "onclick=null");
+
     }else{
 
         front = carta.querySelector(".front-face");
@@ -92,6 +93,8 @@ function flip(carta) {
     
         back = carta.querySelector(".back-face");
         back.classList.toggle("back");
+
+        carta.classList.add("turned")
     
         flippedCards.push('1'); 
         countflip.push('1');   
@@ -100,10 +103,12 @@ function flip(carta) {
     if(firstCard == null){
         firstCard = id - 14;
         first = carta;
+        card1 = carta;
 
     } else if (secondCard == null){
         secondCard = id - 14;
         second = carta;
+        card2 = carta
        setTimeout(verifySelection, 1000, firstCard, secondCard);
     }
 }
@@ -111,22 +116,24 @@ function flip(carta) {
 function verifySelection(){
         if(gifsNum[firstCard] % 2 == 0 && gifsNum[secondCard] == gifsNum[firstCard] + 1){
         flippedCards = [];
-            alert('Acertou');
+            fixTurned()
         } else if (gifsNum[firstCard] % 2 == 1 && gifsNum[secondCard] == gifsNum[firstCard] - 1) {
-            alert('Acertou');
+            fixTurned()
             flippedCards = [];            
         }else if (gifsNum[firstCard] == 0 && gifsNum[secondCard] == 1) {
-            alert('Acertou');
+            fixTurned()
             flippedCards = [];                    
         }else if (gifsNum[firstCard] == 1 && gifsNum[secondCard] == 0) {
-            alert('Acertou');
+            fixTurned()
             flippedCards = [];                     
         }else {  
-            alert('Errou'); 
-            console.log(first);
-            console.log(second);      
+     
             turningBack()
+            flippedCards = [];
         }
+
+        firstCard = null;
+        secondCard = null;
  }
 
  function turningBack(){
@@ -143,4 +150,13 @@ function verifySelection(){
         back = second.querySelector(".back-face");
         back.classList.toggle("back");
 
+        card1.classList.remove("turned")
+        card2.classList.remove("turned")
+
+ }
+
+ function fixTurned(){
+
+        card1.removeAttribute("onclick");
+        card2.removeAttribute("onclick");
  }
